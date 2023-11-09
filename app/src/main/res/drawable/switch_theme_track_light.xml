@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Define the size of the track (adjust the width and height as needed) -->
+    <item
+        android:drawable="@drawable/ic_switch_light_theme"
+        android:width="@dimen/switch_width"
+        android:height="@dimen/switch_height">
+    </item>
+</layer-list>

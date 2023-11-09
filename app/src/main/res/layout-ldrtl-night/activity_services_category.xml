@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:layoutDirection="ltr"
+    tools:context=".ui.servicescategory.ServicesCategory">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_shape"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_layout_height"
+            android:background="@color/transparent">
+
+            <!-- Start drawable -->
+            <FrameLayout
+                android:id="@+id/goBack"
+                android:layout_width="@dimen/toolBar_width"
+                android:layout_height="@dimen/toolBar_height"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/toolBar_button_margin"
+                android:background="@drawable/control_button">
+
+                <ImageView
+                    android:layout_width="@dimen/toolBar_image_width"
+                    android:layout_height="@dimen/toolBar_image_height"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/back_arrow"
+                    android:src="@drawable/ic_left" />
+            </FrameLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/refreshMyCategory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/noConnectionAnimationView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="12dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    android:visibility="gone" />
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <LinearLayout
+                android:id="@+id/noConnectionErrorContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/message_bottom_margin"
+                android:visibility="gone">
+
+                <androidx.constraintlayout.utils.widget.MotionLabel
+                    android:id="@+id/messageLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/oops"
+                    android:textSize="@dimen/first_text_size"
+                    android:textColor="@color/first_text_color" />
+
+                <TextView
+                    android:id="@+id/messageTV"
+                    style="@style/NormalTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:textSize="@dimen/important_text_size"
+                    android:textColor="@color/second_text_color"
+                    android:gravity="center"
+                    android:text="@string/error_with_connection" />
+
+                <Button
+                    android:id="@+id/try_again_btn"
+                    style="@style/ButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/try_again" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <GridView
+                android:id="@+id/services_gridView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:listSelector="@color/transparent"
+                android:numColumns="auto_fit"
+                android:clipToPadding="true"
+                tools:listitem="@layout/services_category_item">
+
+            </GridView>
+        </FrameLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

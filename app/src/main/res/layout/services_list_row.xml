@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="ltr"
+    >
+
+
+    <LinearLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/services_row_margin"
+        android:alpha=".95"
+        android:background="@drawable/service_background_unselect"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/subServices_img"
+            android:layout_width="@dimen/services_row_image_radius"
+            android:layout_height="@dimen/services_row_image_radius"
+            android:layout_marginStart="@dimen/services_img_row_start_margin"
+            android:layout_marginTop="@dimen/services_row_margin"
+            android:layout_marginEnd="@dimen/services_row_margin"
+            android:layout_marginBottom="@dimen/services_row_margin"
+            android:background="@drawable/custom_circle_shape"
+            android:contentDescription="@string/welcome"
+            android:src="@drawable/ic_launcher_foreground">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/TV_SubServices_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:layout_margin="@dimen/services_text_row_margin"
+            android:textSize="@dimen/important_text_size"
+            android:text="@string/welcome"
+            android:textColor="@color/first_light_text_color" />
+    </LinearLayout>
+
+</LinearLayout>

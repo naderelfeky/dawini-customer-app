@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:alpha=".58" android:color="@color/light_blue_400" android:state_focused="true"/>
+        <item android:alpha=".9" android:color="@color/light_blue_400" android:state_hovered="true"/>
+        <item android:alpha=".24" android:color="@color/custom_switch_thumb_color" android:state_enabled="false"/>
+        <item android:alpha=".85" android:color="@color/light_blue_100"/>  <!-- unfocused -->
+</selector>

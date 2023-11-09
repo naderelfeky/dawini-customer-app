@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle" >
+            <size android:height="@dimen/floating_button_height" android:width="@dimen/floating_button_width" />
+            <gradient
+                android:angle="45"
+                android:endColor="@color/light_blue_200"
+                android:endX="33"
+                android:endY="22"
+                android:startColor="@color/blue_400"
+                android:startX="11"
+                android:startY="22"
+                android:type="linear" />
+            <corners android:radius="23dp"/>
+        </shape>
+    </item>
+    <item android:bottom="1dp" android:right="1dp" android:left="1dp" android:top="1dp">
+        <shape
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:shape="rectangle">
+            <size
+                android:width="65dp"
+                android:height="65dp" />
+            <gradient
+                android:angle="45"
+                android:endColor="@color/light_blue_400"
+                android:endX="33"
+                android:endY="22"
+                android:startColor="@color/blue_400"
+                android:startX="11"
+                android:startY="22"
+                android:type="linear" />
+            <corners android:radius="23dp" />
+            <padding android:top="2dp"
+                android:bottom="2dp"
+                android:left="2dp"
+                android:right="2dp"/>
+        </shape>
+    </item>
+    <item android:drawable="@drawable/ic_add" android:width="@dimen/floating_image_size" android:height="@dimen/floating_image_size" android:gravity="center">
+
+    </item>
+</layer-list>
+
+
+

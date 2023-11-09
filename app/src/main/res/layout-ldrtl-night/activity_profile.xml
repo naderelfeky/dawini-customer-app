@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:layoutDirection="rtl"
+    tools:context=".ui.profile.Profile">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:background="@drawable/profile_header_background"
+        android:paddingTop="@dimen/appbar_layout_top_margin">
+
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/profile_collapsing_toolbar_height"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll|snap">
+
+            <!-- Content when expanded -->
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImg"
+                android:layout_width="@dimen/profile_img_width"
+                android:layout_height="@dimen/profile_img_height"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/custom_circle_shape"
+                android:src="@drawable/user_profile_img"
+                app:civ_border_color="@color/light_blue_100"
+                app:civ_border_width="@dimen/profile_img_border" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/profile_pin_toolbar_height"
+                app:layout_collapseMode="pin">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/toolBar_button_margin">
+
+                    <ImageButton
+                        android:id="@+id/goBack"
+                        android:layout_width="@dimen/toolBar_width"
+                        android:layout_height="@dimen/toolBar_height"
+                        android:layout_gravity="top"
+                        android:background="@color/transparent"
+                        android:contentDescription="@string/profile_img"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_left"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageButton
+                        android:id="@+id/editButton"
+                        android:layout_width="@dimen/toolBar_width"
+                        android:layout_height="@dimen/toolBar_height"
+                        android:contentDescription="@string/edit_icon"
+                        app:backgroundTint="@color/transparent"
+                        app:layout_constraintStart_toEndOf="@+id/editLabel"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_edit" />
+
+                    <androidx.constraintlayout.utils.widget.MotionLabel
+                        android:id="@+id/editLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/toolBar_height"
+                        android:layout_gravity="end|top"
+                        android:padding="@dimen/edit_text_label_padding"
+                        android:text="@string/edit"
+                        android:textColor="@color/first_light_text_color"
+                        android:textSize="@dimen/first_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/editButton"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/account_img_profile_Height_size"
+                        android:layout_gravity="end"
+                        android:layout_margin="@dimen/account_profile_margin"
+                        android:backgroundTint="@color/transparent"
+                        app:cardElevation="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/goBack">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/accountDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/account_img_profile_Height_size">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/toolbarProfileImg"
+                                android:layout_width="@dimen/account_img_profile_Width_size"
+                                android:layout_height="@dimen/account_img_profile_Height_size"
+                                android:layout_gravity="end"
+                                android:background="@drawable/custom_circle_shape"
+                                android:src="@drawable/user_profile_img"
+                                app:civ_border_color="@color/light_blue_100"
+                                app:civ_border_width="@dimen/account_img_profile_border"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/userName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/username"
+                                android:layout_marginEnd="@dimen/account_username_start_margin"
+                                android:textColor="@color/second_light_text_color"
+                                android:textSize="@dimen/important_text_size"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/toolbarProfileImg"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/profileDataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/ProfileInputTextLayout"
+                android:enabled="false"
+                android:hint="@string/username">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/profileInputEditText"
+                    android:id="@+id/nameEditText"
+                    android:autofillHints="name"
+                    android:drawableStart="@drawable/ic_person"
+                    android:text="@string/none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/ProfileInputTextLayout"
+                android:enabled="false"
+                android:hint="@string/mail">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/profileInputEditText"
+                    android:id="@+id/emailEditText"
+                    android:autofillHints="emailAddress"
+                    android:drawableStart="@drawable/ic_mail"
+                    android:text="@string/none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/ProfileInputTextLayout"
+                android:enabled="false"
+                android:hint="@string/phone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/profileInputEditText"
+                    android:id="@+id/phoneEditText"
+                    android:autofillHints="phone"
+                    android:drawableStart="@drawable/ic_phone"
+                    android:text="@string/none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/ProfileInputTextLayout"
+                android:enabled="false"
+                android:hint="@string/address">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressEditText"
+                    style="@style/profileInputEditText"
+                    android:autofillHints="name"
+                    android:drawableStart="@drawable/ic_home"
+                    android:text="@string/none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profileNoConnection"
+        android:visibility="invisible"
+        android:layout_marginBottom="@dimen/message_bottom_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/profileAnimation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:elevation="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center_horizontal"
+            android:text="@string/error_with_connection"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/first_text_color"
+            android:textSize="@dimen/important_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

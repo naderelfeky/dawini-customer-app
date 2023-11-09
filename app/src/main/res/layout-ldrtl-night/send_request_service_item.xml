@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="horizontal"
+    android:layout_margin="10dp"
+    android:layoutDirection="rtl"
+    android:weightSum="10">
+
+    <TextView
+        android:id="@+id/requestServiceName"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:textColor="@color/first_light_text_color" />
+
+    <TextView
+        android:id="@+id/requestServiceCost"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:textColor="@color/first_light_text_color"
+        app:drawableStartCompat="@drawable/ic_money"
+        app:drawableTint="@color/second_light_text_color" />
+
+</LinearLayout>

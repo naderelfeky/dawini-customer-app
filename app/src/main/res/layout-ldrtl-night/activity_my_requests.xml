@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    tools:context=".ui.myrequests.MyRequests">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        style="@style/activityBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_shape">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_layout_height"
+                android:background="@color/transparent">
+
+                <!-- Start drawable -->
+                <RelativeLayout
+                    android:id="@+id/searchContainer"
+                    android:layout_width="@dimen/toolBar_width"
+                    android:layout_height="@dimen/toolBar_height"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="@dimen/toolBar_button_margin"
+                    android:background="@drawable/control_button"
+                    android:padding="0dp"
+                    app:paddingEnd="2dp">
+
+                    <ImageView
+                        android:id="@+id/toolbarIconSearch"
+                        android:layout_width="@dimen/toolBar_image_width"
+                        android:layout_height="@dimen/toolBar_image_height"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_search" />
+
+                    <EditText
+                        android:id="@+id/toolbarSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/toolBar_height"
+                        android:layout_marginStart="@dimen/toolBar_width"
+                        android:background="@drawable/search_background"
+                        android:hint="@string/search_here"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:textColor="@color/search_text_color"
+                        android:textColorHint="@color/search_hint_color"  />
+
+                </RelativeLayout>
+
+                <!-- End drawable -->
+                <FrameLayout
+                    android:id="@+id/endDrawable"
+                    android:layout_width="@dimen/toolBar_width"
+                    android:layout_height="@dimen/toolBar_height"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/toolBar_button_margin"
+                    android:background="@drawable/control_button">
+
+                    <ImageView
+                        android:id="@+id/toolbar_navigation_drawer"
+                        android:layout_width="@dimen/toolBar_image_width"
+                        android:layout_height="@dimen/toolBar_image_height"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_setting" />
+
+                </FrameLayout>
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/refreshMyRequest"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/toolbar_layout_height">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/myRequestLottieAnimationView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="12dp"
+                    android:visibility="gone"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true" />
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/refreshMyRequestList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/toolbar_layout_height">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/requestRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="top"
+                    android:clipToPadding="true"
+                    app:layout_anchorGravity="center"
+                    tools:listitem="@layout/request_item" />
+
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <LinearLayout
+                android:id="@+id/messageContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/message_bottom_margin"
+                android:gravity="bottom|center"
+                android:orientation="vertical"
+                android:padding="2dp">
+
+                <androidx.constraintlayout.utils.widget.MotionLabel
+
+                    android:id="@+id/messageLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/empty_request_list"
+                    android:textColor="@color/first_text_color"
+                    android:textSize="@dimen/first_text_size" />
+
+                <TextView
+                    android:id="@+id/messageTV"
+                    style="@style/NormalTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="@string/request_new_service"
+                    android:textColor="@color/second_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <Button
+                    android:id="@+id/try_again_btn"
+                    style="@style/ButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/try_again"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/addRequest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:layout_margin="@dimen/floating_button_margin"
+                android:backgroundTint="@color/transparent"
+                android:src="@drawable/floating_square_button"
+                app:borderWidth="0dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/background"
+        android:fitsSystemWindows="true"
+        android:layoutDirection="ltr"
+        app:dividerInsetEnd="15dp"
+        app:dividerInsetStart="5dp"
+        app:headerLayout="@layout/navigation_drawer_header"
+        app:itemIconTint="@color/drawable_color"
+        app:itemTextColor="@color/second_text_color"
+        app:menu="@menu/navigation_drawer_menu"
+        app:subheaderColor="@color/first_text_color" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

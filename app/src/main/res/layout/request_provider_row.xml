@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="15dp"
+    android:layoutDirection="ltr"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/linear_navy_blue"
+        android:padding="15dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/provider_img"
+            android:layout_width="@dimen/request_profile_image_radius"
+            android:layout_height="@dimen/request_profile_image_radius"
+            android:src="@drawable/user_profile_img"
+            android:background="@drawable/custom_circle_shape"
+            app:civ_border_color="@color/light_blue_100"
+            app:civ_border_width="1dp" />
+
+        <TextView
+            android:id="@+id/provider_name"
+            style="@style/ImportantTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/provider_img"
+            android:textColor="@color/myrequest_first_text_color"
+            android:gravity="center"
+            android:text="@string/provider_name" />
+
+        <TextView
+            android:id="@+id/provider_gender"
+            style="@style/NormalTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/provider_name"
+            android:layout_toEndOf="@+id/provider_img"
+            android:text="@string/gender_men"
+            android:textColor="@color/myrequest_second_text_color"
+            app:drawableStartCompat="@drawable/ic_man" />
+
+        <!--request cost-->
+        <LinearLayout
+            android:id="@+id/provider_rate_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/provider_img"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <androidx.constraintlayout.utils.widget.MotionLabel
+                style="@style/LabelStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/myrequest_second_text_color"
+                android:text="@string/rate" />
+
+            <TextView
+                android:id="@+id/provider_rate"
+                style="@style/NormalTextViewStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:minHeight="@dimen/request_item_min_height"
+                android:text="@string/rate_ex"
+                android:textColor="@color/myrequest_first_text_color"
+                app:drawableStartCompat="@drawable/ic_rate" />
+        </LinearLayout>
+
+        <!--request cost-->
+        <LinearLayout
+            android:id="@+id/provider_request_cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/provider_rate_layout"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <androidx.constraintlayout.utils.widget.MotionLabel
+                style="@style/LabelStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/myrequest_second_text_color"
+                android:text="@string/cost" />
+
+            <TextView
+                android:id="@+id/request_cost"
+                style="@style/NormalTextViewStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:minHeight="@dimen/request_item_min_height"
+                android:textColor="@color/myrequest_first_text_color"
+                android:text="@string/cost_ex"
+                app:drawableStartCompat="@drawable/ic_money"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/action_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/provider_request_cost"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageButton
+                android:id="@+id/accept_provider"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/request_item_min_height"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/done_button_status"
+                android:contentDescription="@string/cancel"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_accept" />
+
+            <ImageButton
+                android:id="@+id/reject_provider"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/request_item_min_height"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/done_button_status"
+                android:contentDescription="@string/cancel"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_cancel_status" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

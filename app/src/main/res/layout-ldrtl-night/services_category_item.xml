@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/services_category_width"
+    android:layout_height="@dimen/services_category_height"
+    android:background="@drawable/services_category_background"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+    android:weightSum="10">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:id="@+id/services_img"
+        android:layout_width="@dimen/services_category_img_width"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="6"
+        android:background="@drawable/services_category_img_background"
+        android:foregroundGravity="bottom"
+        android:paddingTop="20dp"
+        android:paddingBottom="2dp"
+        android:src="@drawable/doctor"
+        android:contentDescription="@string/service_type" />
+
+    <TextView
+        android:id="@+id/TV_services"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="@string/welcome"
+        android:textColor="@color/first_light_text_color"
+        android:textSize="@dimen/important_text_size"
+        android:textStyle="bold" />
+
+</LinearLayout>

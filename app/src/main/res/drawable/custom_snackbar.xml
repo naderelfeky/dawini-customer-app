@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Customize the background as needed -->
+    <item android:drawable="@color/background" />
+
+    <!-- You can add additional layers or shapes here if desired -->
+</layer-list>

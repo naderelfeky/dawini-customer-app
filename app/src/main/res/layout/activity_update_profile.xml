@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:layoutDirection="ltr"
+    tools:context=".ui.updateprofile.UpdateProfile">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        style="@style/NoElevationAppBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/profile_header_background"
+        android:paddingTop="@dimen/appbar_layout_top_margin">
+
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/profile_collapsing_toolbar_height"
+            android:elevation="0dp"
+            app:contentScrim="@android:color/transparent"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+
+            <FrameLayout
+                android:layout_width="@dimen/profile_img_width"
+                android:layout_height="@dimen/profile_img_height"
+                android:layout_gravity="center_horizontal|bottom"
+                app:layout_collapseMode="pin">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImg"
+                    android:layout_width="@dimen/profile_img_width"
+                    android:layout_height="@dimen/profile_img_height"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:background="@drawable/custom_circle_shape"
+                    android:src="@drawable/user_profile_img"
+                    app:civ_border_color="@color/light_blue_100"
+                    app:civ_border_width="@dimen/profile_img_border" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                   android:id="@+id/updateProfileImgButton"
+                    style="@style/FloatingActionButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:backgroundTint="@color/navy_blue_200"
+                    android:contentDescription="@string/edit_icon"
+                    app:borderWidth="0dp"
+                    app:maxImageSize="@dimen/floating_image_size"
+                    app:shapeAppearanceOverlay="@style/CircularShapeAppearance"
+                    app:srcCompat="@drawable/ic_camera" />
+
+            </FrameLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/profile_pin_toolbar_height"
+                app:layout_collapseMode="pin">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/toolBar_button_margin">
+
+                    <ImageButton
+                        android:id="@+id/goBack"
+                        android:layout_width="@dimen/toolBar_width"
+                        android:layout_height="@dimen/toolBar_height"
+                        android:layout_gravity="top"
+                        android:background="@color/transparent"
+                        android:contentDescription="@string/profile_img"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_left"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/updateProfileDataLayout"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/ProfileInputTextLayout"
+                android:enabled="true"
+                android:hint="@string/username">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/profileInputEditText"
+                    android:id="@+id/nameEditText"
+                    android:autofillHints="name"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:drawableStart="@drawable/ic_person"
+                    android:text="@string/none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/ProfileInputTextLayout"
+                android:enabled="true"
+                android:hint="@string/mail">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/profileInputEditText"
+                    android:id="@+id/emailEditText"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:inputType="textEmailAddress"
+                    android:autofillHints="emailAddress"
+                    android:drawableStart="@drawable/ic_mail"
+                    android:text="@string/none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/ProfileInputTextLayout"
+                android:enabled="true"
+                android:hint="@string/phone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/profileInputEditText"
+                    android:id="@+id/phoneEditText"
+                    android:autofillHints="phone"
+                    android:maxLines="1"
+                    android:inputType="phone"
+                    android:singleLine="true"
+                    android:drawableStart="@drawable/ic_phone"
+                    android:text="@string/none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/ProfileInputTextLayout"
+                android:enabled="true"
+                android:hint="@string/address">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressEditText"
+                    style="@style/profileInputEditText"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:autofillHints="name"
+                    android:drawableStart="@drawable/ic_home"
+                    android:text="@string/none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                style="@style/ButtonStyle"
+                android:id="@+id/updateButton"
+                android:enabled="false"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:layout_margin="5dp"
+                android:text="@string/update"
+                />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/updateProfileNoConnection"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/profile_collapsing_toolbar_height"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/updateProfileAnimation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:elevation="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center_horizontal"
+            android:textSize="@dimen/important_text_size"
+            android:textColor="@color/first_text_color"
+            android:text="@string/error_with_connection"
+            android:layout_marginBottom="@dimen/message_bottom_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

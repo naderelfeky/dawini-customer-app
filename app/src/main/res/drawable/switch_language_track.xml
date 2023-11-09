@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+
+        android:width="@dimen/switch_width"
+        android:height="24dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp" />
+            <solid android:color="@color/navy_blue_200" />
+            <size
+                android:width="@dimen/switch_width"
+                android:height="@dimen/switch_height" />
+        </shape>
+
+    </item>
+</layer-list>

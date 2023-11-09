@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:elevation="12dp"
+    android:layoutDirection="rtl"
+    android:alpha=".9">
+    <FrameLayout
+        android:id="@+id/requestBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_blue_200"
+        >
+        <!--body-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/linear_navy_blue"
+            android:layout_marginStart="@dimen/request_item_status_width"
+            android:baselineAligned="false">
+            <!--request info-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginEnd="@dimen/request_item_margin_end"
+                android:layout_marginStart="@dimen/request_item_margin_start">
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    tools:ignore="UseCompoundDrawables">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/serviceTypeImg"
+                        android:layout_width="@dimen/request_profile_image_radius"
+                        android:layout_height="@dimen/request_profile_image_radius"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:background="@drawable/custom_circle_shape"
+                        android:src="@drawable/user_profile_img"
+                        android:contentDescription="@string/app_name" />
+
+                    <TextView
+                        android:id="@+id/serviceType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/service_type"
+                        android:textColor="@color/first_light_text_color"
+                        android:textSize="@dimen/first_text_size"
+                        android:gravity="center"
+                        />
+
+                </LinearLayout>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/request_item_margin_bottom"
+                    android:weightSum="5"
+                    android:baselineAligned="false">
+                    <!--request service-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:layout_height="match_parent"
+                        android:paddingEnd="@dimen/request_item_services_padding_end"
+                        android:orientation="vertical">
+                        <androidx.constraintlayout.utils.widget.MotionLabel
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/request_services"
+                            android:textSize="@dimen/important_text_size"
+                            android:layout_gravity="start"
+                            android:textColor="@color/first_light_text_color"
+                            />
+                        <TextView
+                            android:id="@+id/requestServices"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/service_name"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/second_light_text_color"
+                            android:textSize="@dimen/normal_text_size"
+                            />
+
+
+
+                    </LinearLayout>
+                    <!--data and time-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="2">
+
+                        <TextView
+                            android:id="@+id/requestDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="@dimen/request_item_min_height"
+                            android:text="@string/date"
+                            android:textColor="@color/first_dark_text_color"
+                            android:background="@color/light_blue_100"
+                            android:textSize="@dimen/important_text_size" />
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"/>
+
+                        <TextView
+                            android:id="@+id/requestTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="@dimen/request_item_min_height"
+                            android:text="@string/time"
+                            android:textColor="@color/first_dark_text_color"
+                            android:background="@color/light_blue_100"
+                            android:textSize="@dimen/important_text_size" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+
+</androidx.cardview.widget.CardView>

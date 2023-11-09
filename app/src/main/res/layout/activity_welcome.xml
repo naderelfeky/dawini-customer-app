@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layoutDirection="ltr"
+    style="@style/activityBackground"
+    tools:context=".ui.welcome.WelcomeScreen">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_height"
+        android:layout_weight="1"
+        android:gravity="bottom|center_horizontal"
+        android:background="@drawable/linear_blue_sky_color_shape">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/doctor"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+        <TextView
+            android:layout_width="@dimen/head_textView_size"
+            android:layout_height="@dimen/ET_height"
+            android:text="@string/daweney"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/first_text_color"
+            android:textSize="@dimen/head_text_size"
+            tools:ignore="NestedWeights" />
+        <TextView
+            android:layout_width="@dimen/des_textView_size"
+            android:layout_height="@dimen/ET_height"
+            android:text="@string/welcome_text"
+            android:gravity="top|center"
+            android:textColor="@color/second_text_color"
+            android:textSize="@dimen/des_text_size"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center_horizontal|top"
+        >
+
+        <Button
+            android:id="@+id/btn_welcome"
+            android:layout_width="@dimen/btn_welcome_width"
+            android:layout_height="@dimen/btn_height"
+            android:background="@drawable/button_state"
+            android:text="@string/welcome"
+            android:textSize="@dimen/btn_text_size"
+            android:textColor="@color/button_text_color"
+            style="@style/ButtonStyle"
+             />
+
+
+    </LinearLayout>
+
+</LinearLayout>

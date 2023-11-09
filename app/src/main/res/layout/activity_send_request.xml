@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:layoutDirection="ltr"
+    tools:context=".ui.sendrequest.SendRequest">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_shape">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_layout_height"
+            android:background="@color/transparent">
+
+            <!-- Start drawable -->
+            <FrameLayout
+                android:id="@+id/goBack"
+                android:layout_width="@dimen/toolBar_width"
+                android:layout_height="@dimen/toolBar_height"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/toolBar_button_margin"
+                android:background="@drawable/control_button">
+
+                <ImageView
+                    android:layout_width="@dimen/toolBar_image_width"
+                    android:layout_height="@dimen/toolBar_image_height"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/back_arrow"
+                    android:src="@drawable/ic_left" />
+            </FrameLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/toolbar_layout_height"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sendRequestCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha=".95"
+                android:backgroundTint="@color/request_background"
+                android:layoutDirection="ltr"
+                app:cardCornerRadius="40dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!--request type-->
+
+                    <androidx.constraintlayout.utils.widget.MotionLabel
+                        android:id="@+id/serviceType"
+                        style="@style/LabelStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:text="@string/service_type"
+                        android:textColor="@color/first_light_text_color" />
+
+
+                    <!--line -->
+                    <TextView style="@style/light_line" />
+
+                    <!--services List -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.utils.widget.MotionLabel
+                            android:id="@+id/requestServices"
+                            style="@style/LabelStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/request_services"
+                            android:textColor="@color/first_light_text_color"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/selectionServicesRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/service_name"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHeight_max="@dimen/send_request_services_list_height"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/requestServices"
+                            tools:listitem="@layout/send_request_service_item" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--line -->
+                    <TextView style="@style/light_line" />
+                    <!--   patient  name  -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/patientNameLayout"
+                        style="@style/SendRequestEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/ic_person">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/patientNameEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:drawablePadding="10dp"
+                            android:hint="@string/patient_name"
+                            android:inputType="textPersonName"
+                            android:textColor="@color/first_light_text_color"
+                            android:textColorHighlight="@color/text_color_high_light"
+                            android:textColorLink="@color/navy_blue_200">
+
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!--   patient  name  -->
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        style="@style/SendRequestEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:endIconMode="clear_text"
+                        app:prefixText="+20"
+                        app:startIconDrawable="@drawable/ic_phone">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/phoneNumberEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:drawablePadding="10dp"
+                            android:hint="@string/phone"
+                            android:inputType="phone"
+                            android:maxLength="11"
+                            android:textColor="@color/first_light_text_color"
+                            android:textColorHighlight="@color/text_color_high_light"
+                            android:textColorLink="@color/navy_blue_200">
+
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--   request date and gender  -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+
+                        <!--   request gender  -->
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/genderLayout"
+                            style="@style/SendRequestEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="4"
+                            app:endIconDrawable="@drawable/ic_down_arrow"
+                            app:endIconMode="custom">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/genderEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:clickable="true"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="@string/provider_gender"
+                                android:inputType="none"
+                                android:padding="15dp"
+                                android:textColor="@color/first_light_text_color" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!--   request date -->
+                        <com.google.android.material.textfield.TextInputLayout
+
+                            style="@style/SendRequestEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="6"
+                            app:endIconMode="clear_text"
+                            app:startIconDrawable="@drawable/ic_date">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/dateEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:drawablePadding="10dp"
+                                android:ellipsize="end"
+                                android:focusable="false"
+                                android:hint="@string/date"
+                                android:inputType="none"
+                                android:singleLine="true"
+                                android:textColor="@color/first_light_text_color"
+                                android:textColorHighlight="@color/text_color_high_light"
+                                android:textColorLink="@color/navy_blue_200">
+
+                            </com.google.android.material.textfield.TextInputEditText>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <!--   request address  -->
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        style="@style/SendRequestEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/ic_home">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/requestAddressEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:drawablePadding="10dp"
+                            android:hint="@string/address"
+                            android:inputType="textPersonName"
+                            android:maxLines="1"
+                            android:textColor="@color/first_light_text_color"
+                            android:textColorHighlight="@color/text_color_high_light"
+                            android:textColorLink="@color/navy_blue_200">
+
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--   request location  -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/SendRequestEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/ic_location">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/requestLocationEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:drawablePadding="10dp"
+                            android:ellipsize="end"
+                            android:focusable="false"
+                            android:hint="@string/request_location"
+                            android:inputType="none"
+                            android:textColor="@color/first_light_text_color"
+                            android:textColorHighlight="@color/text_color_high_light"
+                            android:textColorLink="@color/navy_blue_200">
+
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!--done button-->
+                    <Button
+                        android:id="@+id/sendRequest"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/send_request_status"
+                        android:text="@string/send_request" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/sendRequestAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="12dp"
+        android:visibility="gone" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

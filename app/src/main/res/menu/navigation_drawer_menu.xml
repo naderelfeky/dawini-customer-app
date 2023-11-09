@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/app_theme"
+        app:actionLayout="@layout/navigation_drawer_theme_item"
+        android:title="@string/theme" />
+    <item
+        android:id="@+id/app_language"
+        app:actionLayout="@layout/navigation_drawer_language_item"
+        android:title="@string/language" />
+
+
+    <group android:checkableBehavior="single" >
+       <item android:title="@string/my_account">
+           <menu>
+               <item
+               android:id="@+id/profile"
+               android:icon="@drawable/ic_person"
+               android:title="@string/profile" />
+
+
+           </menu>
+       </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:title="@string/communication">
+            <menu>
+                <item
+                    android:id="@+id/whatsApp"
+                    android:checked="true"
+                    android:icon="@drawable/ic_whatsapp"
+                    android:title="@string/whatsapp" />
+                <item
+                    android:id="@+id/phone"
+
+                    android:icon="@drawable/ic_phone"
+                    android:title="@string/phone" />
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single" >
+        <item
+            android:title="@string/logout">
+            <menu >
+                <item android:id="@+id/logout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="@string/logout"/>
+            </menu>
+            </item>
+    </group>
+
+</menu>

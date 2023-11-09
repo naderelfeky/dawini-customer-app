@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/linear_blue_lightblue_color"
+    android:layoutDirection="ltr"
+    android:paddingBottom="20dp">
+
+    <ImageView
+        android:id="@+id/navigation_back"
+        android:layout_width="@dimen/toolbar_layout_height"
+        android:layout_height="@dimen/toolbar_layout_height"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="@dimen/toolbar_layout_height"
+        android:layout_height="@dimen/toolbar_layout_height"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_img"
+        android:layout_width="@dimen/account_img_profile_Width_size"
+        android:layout_height="@dimen/account_img_profile_Height_size"
+        android:layout_marginTop="@dimen/toolbar_layout_height"
+        android:background="@drawable/custom_circle_shape"
+        android:src="@drawable/user_profile_img"
+        android:layout_marginStart="15dp"
+        app:civ_border_color="@color/light_blue_100"
+        app:civ_border_width="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/username"
+        android:textColor="@color/first_light_text_color"
+        android:textSize="@dimen/first_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_img" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
