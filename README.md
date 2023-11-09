@@ -42,9 +42,8 @@ To enhance flexibility and accessibility, Dawini has been implemented as both a 
 ## app Video
 
 [![Watch the Demo Video]]
-(https://github.com/naderelfeky/daweney/assets/73117120/d8e0d06f-337b-41da-ab61-33bec5363101)
 
-## LinkedIn Video
+https://github.com/naderelfeky/daweney/assets/73117120/d8e0d06f-337b-41da-ab61-33bec5363101
 
 ## LinkedIn Video
 
